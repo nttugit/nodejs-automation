@@ -12,7 +12,7 @@ app.get('/about', (req, res) => {
 })
 
 
-app.get('/contact2', (req, res) => {
+app.get('/contact', (req, res) => {
     res.send('contact 22')
 })
 
