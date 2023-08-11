@@ -1,6 +1,7 @@
 pipeline {
-    agent {
-        docker { dockerfile: true}
+    agent any
+    environment {
+        DOCKERHUB_CREDENTIALS=credentials('jenkins-docker')
     }
     stages {
       stage('Clone stage') {
