@@ -1,0 +1,10 @@
+  stage ('Build stage') {
+            steps {
+                withDockerRegistry(credentialsId: 'docker-hub-nicenguyen', url: 'https://index.docker.io/v1/') {
+                    sh 'docker build -t nicenguyen/my-node-app:v2 .'
+                    sh 'docker push nicenguyen/my-node-app:v2 .'
+                }
+              
+            }
+            }
+        }
