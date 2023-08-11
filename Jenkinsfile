@@ -1,11 +1,19 @@
 pipeline {
     agent {
-        docker { image 'node:18-alpine' }
+        docker { dockerfile: true}
     }
     stages {
-        stage('Test') {
+      stage('Clone stage') {
             steps {
-                sh 'node --version'
+                git 'https://github.com/nttugit/nodejs-automation.git' 
+            }
+        }
+        stage ('Build stage') {
+            steps {
+                withDockerRegistry(credentialsId: 'docker-hub-nicenguyen', url: 'https://index.docker.io/v1/') {
+                    sh 'docker build -t nicenguyen/nodejs-automation:v2 .'
+                    sh 'docker push nicenguyen/nodejs-automation:v2'
+                }
             }
         }
     }
