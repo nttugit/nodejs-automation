@@ -6,9 +6,6 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
-app.get('/he-he', (req, res) => {
-    res.send('He he!')
-})
 
 app.get('/about', (req, res) => {
     res.send('My name is Nguyen Tuan Tu!')
