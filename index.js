@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
 })
 
 
-app.get('/about', (req, res) => {
+app.get('/about22', (req, res) => {
     res.send('My name is Nguyen Tuan Tu!')
 })
 
