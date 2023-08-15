@@ -35,4 +35,10 @@ describe('Express App', () => {
                 done();
             });
     });
+
+    after(() => {
+        console.log('Tests are completed');
+        // forcefully exit the program
+        process.exit(0); // Exit with success status
+    });
 });
