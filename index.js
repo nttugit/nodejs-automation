@@ -16,6 +16,10 @@ app.get('/contact', (req, res) => {
     return res.json("contact");
 })
 
+// them route hello
+app.get('/hello', (req, res) => {
+    return res.json("hello");
+})
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
