@@ -9,7 +9,7 @@ pipeline {
             }
         }
         
-        stage('Build') {
+        stage('Build source code (dependencies)') {
             steps {
                 bat 'npm install'
             }
@@ -37,6 +37,7 @@ pipeline {
             // Clean up Docker images and containers
             cleanWs()
             sh 'docker system prune -af'
+            sh 'docker logout'
         }
     }
 }
