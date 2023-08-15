@@ -3,20 +3,22 @@ const app = express()
 const port = 3000
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    return res.json('Hello World!')
 })
 
 
-app.get('/about22', (req, res) => {
-    res.send('My name is Nguyen Tuan Tu!')
+app.get('/about', (req, res) => {
+    return res.json('about')
 })
 
 
 app.get('/contact', (req, res) => {
-    res.send('contact 22')
+    return res.json("contact");
 })
 
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
+
+module.exports = app
