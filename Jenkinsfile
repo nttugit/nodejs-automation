@@ -10,16 +10,14 @@ pipeline {
         
         stage('Build and Push Docker Image') {
             steps {
-                script {
-                    // Build the Docker image
-                    def dockerImage = docker.build('your-image-name:tag', '.')
                     
                     // Authenticate with the Docker registry
                     withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/') {
-                        // Push the Docker image to the registry
-                        dockerImage.push()
+                      bat 'docker build -t nicenguyen/nodejs-automation:v2 .'
+                      bat 'docker push nicenguyen/nodejs-automation:v2'
+
                     }
-                }
+                
             }
         }
     }
