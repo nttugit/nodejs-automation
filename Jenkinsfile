@@ -2,9 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout git and build source (maven)'){
+        stage('Checkout git'){
             steps {
                 git 'https://github.com/nttugit/nodejs-automation'
+                bat 'npm install'
             }
         }
         stage('Build docker image') {
